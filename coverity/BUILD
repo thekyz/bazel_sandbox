@@ -14,13 +14,6 @@ cc_binary(
     deps = [":hellolib"],
 )
 
-genrule(
-    name = "coverity_gatherer",
-    srcs = [":hello"],
-    outs = ["gatherer.all"],
-    cmd = "find . -iname '*.tu' > $@",
-)
-
 action_listener(
     name = "coverity_listener",
     mnemonics = [
